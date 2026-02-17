@@ -1,29 +1,31 @@
 module Euler8Spec (spec) where
 
+import Euler8 (euler8Cycle, euler8Inf, euler8Map, euler8Modular, euler8Recursion, euler8Tail)
 import Test.Hspec
-import Euler8 (euler8Tail, euler8Recursion, euler8Modular, euler8Map, euler8Cycle, euler8Inf)
 
 testNumber :: Integer
 testNumber = 7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450
+
 testWindowsize :: Int
 testWindowsize = 13
+
 testAnswer :: Int
 testAnswer = 23514624000
 
 spec :: Spec
 spec = do
-    it "matches the project Euler example" $ do
-        euler8Tail testNumber 4 `shouldBe` 5832
-        euler8Recursion testNumber 4 `shouldBe` 5832
-        euler8Modular testNumber 4 `shouldBe` 5832
-        euler8Map testNumber 4 `shouldBe` 5832
-        euler8Cycle testNumber 4 `shouldBe` 5832
-        euler8Inf testNumber 4 `shouldBe` 5832
+  it "matches the project Euler example" $ do
+    euler8Tail testNumber 4 `shouldBe` 5832
+    euler8Recursion testNumber 4 `shouldBe` 5832
+    euler8Modular testNumber 4 `shouldBe` 5832
+    euler8Map testNumber 4 `shouldBe` 5832
+    euler8Cycle testNumber 4 `shouldBe` 5832
+    euler8Inf testNumber 4 `shouldBe` 5832
 
-    it "matches the project Euler solution" $ do
-        euler8Tail testNumber testWindowsize `shouldBe` testAnswer
-        euler8Recursion testNumber testWindowsize `shouldBe` testAnswer
-        euler8Modular testNumber testWindowsize `shouldBe` testAnswer
-        euler8Map testNumber testWindowsize `shouldBe` testAnswer
-        euler8Cycle testNumber testWindowsize `shouldBe` testAnswer
-        euler8Inf testNumber testWindowsize `shouldBe` testAnswer
+  it "matches the project Euler solution" $ do
+    euler8Tail testNumber testWindowsize `shouldBe` testAnswer
+    euler8Recursion testNumber testWindowsize `shouldBe` testAnswer
+    euler8Modular testNumber testWindowsize `shouldBe` testAnswer
+    euler8Map testNumber testWindowsize `shouldBe` testAnswer
+    euler8Cycle testNumber testWindowsize `shouldBe` testAnswer
+    euler8Inf testNumber testWindowsize `shouldBe` testAnswer
