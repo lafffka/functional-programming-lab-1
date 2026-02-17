@@ -2,6 +2,7 @@ module Main where
 
 import System.Random (randomRIO)
 import qualified Euler8 (euler8Tail, euler8Recursion, euler8Modular, euler8Map, euler8Cycle, euler8Inf)
+import Euler23 (euler23Tail, euler23Recursion, euler23Modular, euler23Map, euler23Cycle, euler23Inf)
 
 generateRandomNDigitInteger :: Int -> IO Integer
 generateRandomNDigitInteger n = do
@@ -28,3 +29,9 @@ main = do
     putStrLn ("Maximum product of " ++ show windowSize ++ " consecutive digits (Map): " ++ show resultMap)
     putStrLn ("Maximum product of " ++ show windowSize ++ " consecutive digits (Cycle): " ++ show resultCycle)
     putStrLn ("Maximum product of " ++ show windowSize ++ " consecutive digits (Inf): " ++ show resultInf)
+    putStrLn ("Euler23 (tail): " ++ show euler23Tail)
+    putStrLn ("Euler23 (Recursion): " ++ show euler23Recursion)
+    putStrLn ("Euler23 (Modular): " ++ show euler23Modular)
+    putStrLn ("Euler23 (Map): " ++ show euler23Map)
+    putStrLn ("Euler23 (Cycle): " ++ show euler23Cycle)
+    putStrLn ("Euler23 (Inf): " ++ show euler23Inf)
