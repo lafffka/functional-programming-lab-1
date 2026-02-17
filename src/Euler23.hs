@@ -55,14 +55,14 @@ getAbdundantsInf :: [Int]
 getAbdundantsInf = [x | x <- [1 ..], sum [d | d <- [1 .. x `div` 2], x `mod` d == 0] > x]
 
 isSumOfTwoTail :: Int -> [Int] -> Set.Set Int -> Bool
-isSumOfTwoTail n [] _ = False
+isSumOfTwoTail _ [] _ = False
 isSumOfTwoTail n (a : as) abundantSet
   | a > n `div` 2 = False
   | Set.member (n - a) abundantSet = True
   | otherwise = isSumOfTwoTail n as abundantSet
 
 isSumOfTwoRec :: Int -> [Int] -> Set.Set Int -> Bool
-isSumOfTwoRec n [] _ = False
+isSumOfTwoRec _ [] _ = False
 isSumOfTwoRec n (a : as) abundantSet
   | a > n `div` 2 = False
   | Set.member (n - a) abundantSet = True
